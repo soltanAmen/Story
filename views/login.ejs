@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/login.css" />
+  </head>
+  <body>
+    <div id="container">
+      <%- include('partials/header') %>
+      <div id="home">
+        <div class="login-container">
+          <form action="/profile" method="POST">
+            <h1>Login</h1>
+            <div>
+              <i class="fas fa-user"></i><input type="text" placeholder="Username" name="username" required/>
+            </div>
+            <div>
+              <i class="fas fa-lock"></i><input type="password" placeholder="Password" name="password" required />
+            </div>
+
+            <input type="submit" value="Login" />
+            <p class="error-message">Invalid username or password</p>
+            <a class="signup-link" href="/signup">Sign up</a>
+          </form>
+        </div>
+        <img src="/images/login.png" alt="" />
+      </div>
+      <%- include('partials/footer') %>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/ee02c1c754.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

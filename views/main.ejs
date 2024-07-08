@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogIt</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <%- include("partials/header.ejs") %>
+      <div id="home" class="top">
+        <div id="slogan">
+          <h1>Welcome to BlogIt</h1>
+          <h4>Where Ideas Thrive: Your Gateway to Insightful Blogging</h4>
+        </div>
+        <img src="/images/bg-home.png" alt="bg" id="bg" loading="lazy" />
+      </div>
+      <div id="popular" class="hidden-div">
+        <h3>popular posts</h3>
+        <div id="posts">
+          <div class="post">
+            <img src="/images/1.jpg" alt="post" />
+            <h4>Post 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+          </div>
+          <div class="post">
+            <img src="/images/1.jpg" alt="post" />
+            <h4>Post 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              
+            </p>
+          </div>
+          <div class="post">
+            <img src="/images/1.jpg" alt="post" />
+            <h4>Post 3</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="subcontainer" class="hidden-div">
+        <h3>subscribe to our newsletter</h3>
+        <p>Get the latest news and updates from our blog</p>
+        <div id="cont">
+          <input
+            type="email"
+            placeholder="name@yahoo.com"
+            name="email"
+            id="email"
+          /><button id="sub">Submit</button>
+        </div>
+      </div>
+      <%- include("partials/footer.ejs") %>
+    </div>
+    <script src="https://kit.fontawesome.com/ee02c1c754.js" crossorigin="anonymous"></script>
+    <script src="/javascript/main.js"></script>
+  </body>
+</html>

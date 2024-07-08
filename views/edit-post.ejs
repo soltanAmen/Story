@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <div id="container">
+      <%- include('partials/header') %>
+      <h1>Edit Post</h1>
+      <p>Fill in the details below to create a new post</p>
+      date: <%= date= new Date().toDateString(); %>
+      <form action="/profile/<%= post.id %>" method="post">
+        
+        <input type="text" name="title" placeholder="Title" value="<%= post.title %>" id="title"/>
+       
+        <input type="text" name="tags" placeholder="Tags" />
+
+
+        <input type="text" name="author" placeholder="Author" />
+        <input type="text" name="time" placeholder="Time" />
+        <textarea name="content" placeholder="Content" id="content">
+            <%= post.content %>
+        </textarea>
+        <input type="file" name="photo" accept="image/*" />
+        <button type="submit">Submit</button>
+      </form>
+      <%- include('partials/footer') %>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/ee02c1c754.js"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

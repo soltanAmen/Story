@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogIt</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <%- include("partials/header") %>
+         <h1>Profile</h1>
+        <div id="user-info">
+        
+           
+            <h2>User Information</h2>
+            <div><i class="fas fa-user"></i><p>Name: <%= username %></p></div>
+           <div> <i class="fas fa-envelope"></i><p>Email: <%= email %></p></div>
+            <div><i class="fas fa-phone"></i><p>Telephone: <%= tel %></p></div>
+           <div> <i class="fas fa-map-marker-alt"></i><p>Address: <%= address %></p></div>
+           <div><button> <a href="/">Logout</a></button></div>
+           <div> <a href="/create-post"><button > New Post</button></a></div>
+
+            
+
+            <!-- Add more user information here -->
+        </div>
+        <h1>Posts</h1>
+        <div id="posts">
+           <% if(posts.length === 0) { %> 
+                <p>No posts yet</p>
+           <% }%>
+            
+            <% posts.forEach(post => { %>
+                <div class="post">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.content %></p>
+                    <a href="/post/<%= post.id %>">Read more</a>
+                    <div id="parametre">
+
+            <a href="/edit-post/<%= post.id %>">Edit Post</a>
+            <a href="/delete/<%= post.id %>">Delete Post</a>
+            
+        </div>
+       
+                </div>
+                
+            <% }) %>
+             
+        
+        </div>        
+    <%- include("partials/footer") %>
+    </div>
+    <script src="https://kit.fontawesome.com/ee02c1c754.js" crossorigin="anonymous"></script>
+</body>
+</html>
