@@ -68,10 +68,6 @@ app.post("/profile", (req, res) => {
     posts: posts,
   });
 });
-app.get("/profile/:id",(req,res)=>{
-    let post=posts.find((post)=>post.id===req.params.id);
-      res.render(__dirname + "/views/profile.ejs",post);
-})
 
 
 app.get("/create-post", (req, res) => {
@@ -103,6 +99,11 @@ app.post("/profile/:id", (req, res) => {
   res.redirect("/profile");
   console.log(posts);
 });
+app.get("/post/:id", (req, res) => {
+  let post = posts.find((post) => post.id === req.params.id);
+  res.render(__dirname + "/views/post.ejs", post);
+});
+
 app.post("/edit-post/:id", (req, res) => {
   let post = posts.find((post) => post.id === req.params.id);
   post.title = req.body.title;
