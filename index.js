@@ -117,7 +117,7 @@ app.get("/signup", (req, res) => {
 app.listen(port, () => {
   console.log(`sever runing in port ${port}`);
 });
-/*app.use((req, res) => {
+app.use((req, res) => {
   res.status(404).sendFile(__dirname + "/views/404.html");
 });
-*/
+

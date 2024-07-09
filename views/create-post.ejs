@@ -14,11 +14,11 @@
       <p>Fill in the details below to create a new post</p>
       date: <%= date= new Date().toDateString(); %>
       <form action="/submit/profile" method="post">
-        <input type="text" name="title" placeholder="Title" />
-        <input type="text" name="tags" placeholder="Tags" />
-        <input type="text" name="author" placeholder="Author" />
-        <input type="text" name="time" placeholder="Time" />
-        <textarea name="content" placeholder="Content"></textarea>
+        <input type="text" name="title" placeholder="Title" required />
+        <input type="text" name="tags" placeholder="Tags" required />
+        <input type="text" name="author" placeholder="Author" required />
+        <input type="text" name="time" placeholder="Time" required />
+        <textarea name="content" placeholder="Content" required></textarea>
         <input type="file" name="photo" accept="image/*" />
         <button type="submit">Submit</button>
       </form>
