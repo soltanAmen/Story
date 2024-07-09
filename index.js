@@ -68,6 +68,12 @@ app.post("/profile", (req, res) => {
     posts: posts,
   });
 });
+app.get("/profile/:id",(req,res)=>{
+    let post=posts.find((post)=>post.id===req.params.id);
+      res.render(__dirname + "/views/profile.ejs",post);
+})
+
+
 app.get("/create-post", (req, res) => {
   res.render(__dirname + "/views/create-post.ejs");
 });
